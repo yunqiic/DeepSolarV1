@@ -8,6 +8,8 @@ wget -c https://s3-us-west-1.amazonaws.com/roofsolar/inception_segmentation.tar.
 pip install -r requirements.txt -i https://pypi.douban.com/simple
 
 pip install --upgrade pip
+
+docker run -ti --volume="$(pwd)":/DeepSolarV1 --rm python:2.7 bash
 ```
 
 ```
