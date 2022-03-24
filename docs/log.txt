@@ -1,0 +1,31 @@
+python generate_data_list.py
+Train set list done. # positive samples: 0 # negative samples: 0
+Validation set list done. # positive samples: 0 # negative samples: 0
+Traceback (most recent call last):
+  File "generate_data_list.py", line 67, in <module>
+    eval_set_meta = pd.read_csv(os.path.join(TEST_SET_DIR, 'eval_set_meta.csv')).values
+  File "/usr/local/lib/python2.7/site-packages/pandas/io/parsers.py", line 678, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib/python2.7/site-packages/pandas/io/parsers.py", line 440, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/local/lib/python2.7/site-packages/pandas/io/parsers.py", line 787, in __init__
+    self._make_engine(self.engine)
+  File "/usr/local/lib/python2.7/site-packages/pandas/io/parsers.py", line 1014, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/local/lib/python2.7/site-packages/pandas/io/parsers.py", line 1708, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 384, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 695, in pandas._libs.parsers.TextReader._setup_parser_source
+IOError: File SPI_eval/eval_set_meta.csv does not exist
+
+python train_classification.py --fine_tune=True
+Traceback (most recent call last):
+  File "train_classification.py", line 17, in <module>
+    from inception import inception_model as inception
+ImportError: No module named inception
+
+python train_classification.py --fine_tune=True
+Traceback (most recent call last):
+  File "train_classification.py", line 17, in <module>
+    from inception import inception_model as inception
+ImportError: cannot import name inception_model
