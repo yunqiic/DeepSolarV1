@@ -9,3 +9,19 @@ pip install -r requirements.txt -i https://pypi.douban.com/simple
 
 pip install --upgrade pip
 ```
+
+```
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = git@github.com:yunqiic/DeepSolarV1.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+```
