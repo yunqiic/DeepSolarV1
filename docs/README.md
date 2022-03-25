@@ -9,8 +9,8 @@ pip install -r requirements.txt -i https://pypi.douban.com/simple
 
 pip install --upgrade pip
 
-docker run -ti --volume="$(pwd)":/DeepSolarV1 --rm python:2.7 bash
-# docker run -ti --volume="$(pwd)":/DeepSolarV1 --rm python:3.7 bash
+sudo docker run -ti --volume="$(pwd)":/DeepSolarV1 --rm python:2.7 bash
+# sudo docker run -ti --volume="$(pwd)":/DeepSolarV1 --rm python:3.7 bash
 
 pip install inception -i https://pypi.douban.com/simple
 pip install pandas -i https://pypi.douban.com/simple
