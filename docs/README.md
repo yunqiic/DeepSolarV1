@@ -12,6 +12,7 @@ pip install --upgrade pip
 sudo docker run -ti --volume="$(pwd)":/DeepSolarV1 --rm python:2.7 bash
 # sudo docker run -ti --volume="$(pwd)":/DeepSolarV1 --rm python:3.7 bash
 
+pip install -r requirements.txt -i https://pypi.douban.com/simple
 pip install inception -i https://pypi.douban.com/simple
 pip install pandas -i https://pypi.douban.com/simple
 
@@ -30,6 +31,7 @@ https://academictorrents.com/details/f0977a00ca9d61eefdfa232515ac6690d3b56fc5
 http://academictorrents.com/browse.php?search=SPI_train
 http://academictorrents.com/browse.php?search=SPI_eval
 
+cd /DeepSolarV1
 python train_classification.py --fine_tune=True
 ```
 
