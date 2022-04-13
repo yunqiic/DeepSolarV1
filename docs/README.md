@@ -31,7 +31,10 @@ https://academictorrents.com/details/f0977a00ca9d61eefdfa232515ac6690d3b56fc5
 http://academictorrents.com/browse.php?search=SPI_train
 http://academictorrents.com/browse.php?search=SPI_eval
 
+tar -zxvf SPI_eval.tar.gz/SPI_eval.tar.gz
+
 cd /DeepSolarV1
+python generate_data_list.py
 python train_classification.py --fine_tune=True
 ```
 
