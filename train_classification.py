@@ -199,9 +199,9 @@ def train():
             variables_to_restore = tf.get_collection(
                 slim.variables.VARIABLES_TO_RESTORE)
             restorer = tf.train.Saver(variables_to_restore)
-            restorer.restore(sess, FLAGS.pretrained_model_checkpoint_path)
+            restorer.restore(sess, FLAGS.pretrained_model_ckpt_path)
             print('%s: Pre-trained model restored from %s' %
-                  (datetime.now(), FLAGS.pretrained_model_checkpoint_path))
+                  (datetime.now(), FLAGS.pretrained_model_ckpt_path))
 
         summary_writer = tf.summary.FileWriter(
             FLAGS.ckpt_save_dir,
