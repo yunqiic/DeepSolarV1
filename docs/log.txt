@@ -29,3 +29,9 @@ Traceback (most recent call last):
   File "train_classification.py", line 17, in <module>
     from inception import inception_model as inception
 ImportError: cannot import name inception_model
+
+ython train_classification.py --fine_tune=True
+Traceback (most recent call last):
+  File "train_classification.py", line 17, in <module>
+    from inception import inception_model as inception
+ImportError: cannot import name inception_model
