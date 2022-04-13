@@ -35,6 +35,8 @@ tar -zxvf SPI_eval.tar.gz/SPI_eval.tar.gz
 
 cd /DeepSolarV1
 python generate_data_list.py
+python train_classification.py --fine_tune=False
+
 python train_classification.py --fine_tune=True
 ```
 
