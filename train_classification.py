@@ -173,6 +173,7 @@ def train():
 
         # Create a saver.
         saver = tf.train.Saver(tf.all_variables())
+        # loader = tf.train.Saver(tf.trainable_variables())  # (tf.all_variables())
 
         # Build the summary operation from the last tower summaries.
         summary_op = tf.summary.merge_all()
@@ -190,6 +191,7 @@ def train():
             checkpoint = tf.train.get_checkpoint_state(FLAGS.ckpt_restore_dir)
             if checkpoint and checkpoint.model_checkpoint_path:
                 saver.restore(sess, checkpoint.model_checkpoint_path)
+                # loader.restore(sess, checkpoint.model_checkpoint_path)
                 print("Successfully loaded:", checkpoint.model_checkpoint_path)
             else:
                 print("Could not find old network weights")

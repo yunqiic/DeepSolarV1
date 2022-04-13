@@ -139,7 +139,7 @@ def l2_loss(tensor, weight=1.0, scope=None):
     return loss
 
 
-def cross_entropy_loss(logits, one_hot_labels, label_smoothing=0,
+def cross_entropy_loss(logits, one_hot_labels, penalty_vector, label_smoothing=0,
                        weight=1.0, scope=None):
   """Define a Cross Entropy loss using softmax_cross_entropy_with_logits.
 
@@ -169,6 +169,10 @@ def cross_entropy_loss(logits, one_hot_labels, label_smoothing=0,
     weight = tf.convert_to_tensor(weight,
                                   dtype=logits.dtype.base_dtype,
                                   name='loss_weight')
-    loss = tf.multiply(weight, tf.reduce_mean(cross_entropy), name='value')
+    # loss = tf.multiply(weight, tf.reduce_mean(cross_entropy), name='value')
+    # Robban added support for penalty_vector
+    cost_sensitive_cross_entropy = tf.multiply(penalty_vector, cross_entropy)
+    loss = tf.multiply(weight, tf.reduce_mean(cost_sensitive_cross_entropy), name='value')
+
     tf.add_to_collection(LOSSES_COLLECTION, loss)
     return loss
